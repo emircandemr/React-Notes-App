@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+
+  @apply bg-slate-200
+
+}
+
+.todoList{
+  flex-wrap: wrap;
+  grid-template-columns: repeat(3,210px);
+  column-gap: 4rem ;
+
+}
+
+.todo{
+  transition: all 0.5s ease;
+}
