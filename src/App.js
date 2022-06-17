@@ -14,7 +14,12 @@ function App() {
   const [filteredTodos,setFilteredTodos] = useState([])
 
   useEffect( () => {
+    getLocalStorage();
+  },[])
+
+  useEffect( () => {
     FilterFunc()
+    saveLocalStorage()
   },[todo,status])
 
   const FilterFunc = () => {
@@ -30,8 +35,19 @@ function App() {
         setFilteredTodos(todo)
         break;
     }
+  }
 
+  const saveLocalStorage = () => {
+    localStorage.setItem("notes", JSON.stringify(todo));
+  }
 
+  const getLocalStorage = () => {
+    if(JSON.parse(localStorage.getItem("notes") === null)){
+      localStorage.setItem("notes", JSON.stringify([]))
+    }
+    else{
+      setTodo(JSON.parse(localStorage.getItem("notes")))
+    }
   }
 
 
