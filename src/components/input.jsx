@@ -6,18 +6,23 @@ function Input({text,setText,todo,setTodo}) {
   return (
 
     <div className='w-full flex justify-center items-center'>
-            <input value={text} className='w-1/3  p-2 rounded-xl mt-5 border shadow-xl outline-none focus:border-purple-500 border-gray-300
+            <input value={text} className='w-5/6 sm:w-2/3 lg:w-2/3 xl:w-1/3  p-2 rounded-xl mt-5 border shadow-xl outline-none focus:border-purple-500 border-gray-300
              placeholder:text-gray-400 cursor-pointer text-base' placeholder='Create New Note' autoFocus onKeyPress={ (e) => {
               if(e.key==="Enter" && text.trim()!==""){
+
                 setTodo([
                   ...todo,
                   {text:text, id:new Date().getTime(), completed:false}
                 ])
+                
                 setText("")
+                localStorage.setItem("notes", JSON.stringify(todo));
+
               }
              }}
               onChange={(e) => {
                 setText(e.target.value)
+                
               }}
              />
     </div>

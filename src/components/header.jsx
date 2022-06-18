@@ -7,7 +7,7 @@ function Header() {
     <div className='flex h-24 m-5 justify-start box-border overflow-hidden'>
         
         <div>
-            <img  className='w-full h-full' src={logo} />
+            <img  className='w-full h-full' src={logo} alt="logo" />
         </div>
         <div className='flex justify-center items-center text-purple-600 text-4xl font-extrabold'>
             <h2> Notes App </h2>
