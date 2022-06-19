@@ -16,7 +16,6 @@ function Input({text,setText,todo,setTodo}) {
                 ])
                 
                 setText("")
-                localStorage.setItem("notes", JSON.stringify(todo));
 
               }
              }}
